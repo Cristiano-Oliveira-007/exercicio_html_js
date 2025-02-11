@@ -22,9 +22,11 @@
         
         <div class="form-box">
             <h1>Comparação numérica</h1>
-            <form id="form-comparison">
+            <form id="form-comparison" novalidate>
                 <input type="number" id="nunA" placeholder="Digite o número menor" required>
+                <p id="campoA-invalido">Digite um número!</p>
                 <input type="number" id="nunB" placeholder="Digite o número maior" required>
+                <p id="campoB-invalido">Digite um número!</p>
                 <button id="btn-comparison" type="submit">Comparar</button>
             </form>
         </div><!-- form-box -->

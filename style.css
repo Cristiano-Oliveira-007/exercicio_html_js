@@ -122,3 +122,21 @@ h1 {
     border: 2px solid rgba(255, 115, 0, 0.507);
     border-radius: 5px;
 }
+
+#campoA-invalido {
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    font-size: 12px;
+    background-color: rgba(255, 0, 0, 0.295);
+    border-radius: 5px;
+    display: none;
+}
+
+#campoB-invalido {
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    font-size: 12px;
+    background-color: rgba(255, 0, 0, 0.295);
+    border-radius: 5px;
+    display: none;
+}

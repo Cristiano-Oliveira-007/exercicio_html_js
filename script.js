@@ -15,35 +15,57 @@ document.getElementById("nunB").addEventListener("keypress", function (e) {
 form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    let valorA = parseFloat(document.getElementById("nunA").value);
-    let valorB = parseFloat(document.getElementById("nunB").value);
-    
+    let valorA = document.getElementById("nunA");
+    let valorB = document.getElementById("nunB");
+
     let msgSucesso = document.getElementById("msg-sucesso");
     let msgErro = document.getElementById("msg-erro");
 
+    let msgInvalidoA = document.getElementById("campoA-invalido");
+    let msgInvalidoB = document.getElementById("campoB-invalido");
+
+
     msgSucesso.style.display = "none";
     msgErro.style.display = "none";
+    msgInvalidoA.style.display = "none";
+    msgInvalidoB.style.display = "none";
+
+    let erro = false;
 
 
-    if (isNaN(valorA) || isNaN(valorB)) {
+    if (valorA.value.trim() === "") {
+        msgInvalidoA.style.display = "block";
+        erro = true;
+    }
+
+    if (valorB.value.trim() === "") {
+        msgInvalidoB.style.display = "block";
+        erro = true;
+    }
+
+    if (erro) return;
+
+    let numA = parseFloat(valorA.value);
+    let numB = parseFloat(valorB.value);
+
+
+    if (isNaN(numA) || isNaN(numB)) {
         msgErro.textContent = "Por favor, preencha os dois campos com números válidos.";
         msgErro.style.display = "block";
         return;
     }
 
-
     msgSucesso.style.display = "block";
 
-
-    if (valorB > valorA) {
-        msgSucesso.textContent = `O número ${valorB} é maior que o número ${valorA}.`;
-    } else if (valorB === valorA) {
-        msgSucesso.textContent = `Os números são iguais: ${valorA}.`;
+    if (numB > numA) {
+        msgSucesso.textContent = `O número ${numB} é maior que o número ${numA}.`;
+    } else if (numB === numA) {
+        msgSucesso.textContent = `Os números são iguais: ${numA}.`;
     } else {
-        msgSucesso.textContent = `O número ${valorB} não é maior que o número ${valorA}.`;
+        msgSucesso.textContent = `O número ${numB} não é maior que o número ${numA}.`;
     }
 
 
-    document.getElementById("nunA").value = "";
-    document.getElementById("nunB").value = "";
+    valorA.value = "";
+    valorB.value = "";
 });
