@@ -6,10 +6,9 @@ const msgErro = document.getElementById("msg-erro");
 const msgInvalidoA = document.getElementById("campoA-invalido");
 const msgInvalidoB = document.getElementById("campoB-invalido");
 
-// 🔹 Função para remover erro quando o usuário digita algo
 function removerErro(input, msgErro) {
-    input.style.border = "2px solid transparent"; // Remove a borda vermelha
-    msgErro.style.display = "none"; // Esconde a mensagem de erro
+    input.style.border = "2px solid transparent";
+    msgErro.style.display = "none";
 }
 
 [valorA, valorB].forEach(input => {
